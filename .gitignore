@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+.env
+
+# Docker
+*.log
+docker-compose.override.yml
+
+# VSCode
+.vscode/
+
+# Node (si tu utilises Node.js dans frontend)
+node_modules/
+
+# Kubernetes manifests temporaires
+*.yaml~
+
+# MacOS
+.DS_Store
+
+# Logs
+*.log
+
+# Env files
+.env
+
+# Pytest cache
+.pytest_cache/
+
+# Build files
+build/
+dist/
+
+# IDE / Editor files
+.idea/
+*.iml
