@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: velodoc-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+spec:
+  rules:
+  - host: velodoc.local   # à ajouter dans /etc/hosts
+    http:
+      paths:
+      - path: /api/?(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: velodoc-backend
+            port:
+              number: 8000
+      - path: /?(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: velodoc-frontend
+            port:
+              number: 80

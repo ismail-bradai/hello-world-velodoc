@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: velodoc-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: velodoc-backend
+  template:
+    metadata:
+      labels:
+        app: velodoc-backend
+    spec:
+      containers:
+      - name: backend
+        image: amazit/velodoc-backend:latest  # image Docker que tu dois builder + push
+        ports:
+        - containerPort: 8000
